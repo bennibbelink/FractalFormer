@@ -48,8 +48,7 @@ class Config:
     rope_theta = 100.0
     # smaller models should use a smaller theta, but I'm just guessing here. 1000 might work too. 10,000 is the usual
 
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     # the % of neurons to dropout in the MLP
     dropout = 0.1
 
